@@ -8,7 +8,7 @@ let fakeStore
 beforeEach(() => {
     fakeStore = {}
 
-    vi.spyOn(storage, "save").mockImplementation((key, value)n => {
+    vi.spyOn(storage, "save").mockImplementation((key, value) => {
         fakeStore[key] = value
     })
 

@@ -16,48 +16,37 @@ export default [
       },
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
-        }
-      }
+          jsx: true,
+        },
+      },
     },
     plugins: {
       react,
-      "react-hooks": reactHooks
+      "react-hooks": reactHooks,
     },
     settings: {
-      react: { version: "detect" }
+      react: { version: "detect" },
     },
     rules: {
-      // React 17+/18 (Vite)
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
-
-      // PropTypes nicht nötig
       "react/prop-types": "off",
-
-      // Hooks Regeln
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-
-      // weniger strenge Fehler für Demo
-      "no-unused-vars": "warn"
-    }
+      "no-unused-vars": "warn",
+    },
   },
 
   {
     files: ["vite.config.js", "**/*.config.js"],
     languageOptions: {
       globals: {
-        ...globals.node
-      }
-    }
+        ...globals.node,
+      },
+    },
   },
 
   {
-    ignores: [
-      "**/*.test.js",
-      "**/*.spec.js",
-      "src/hooks/use-mobile.js"
-    ]
-  }
+    ignores: ["dist/**", "src/hooks/use-mobile.js"],
+  },
 ]
